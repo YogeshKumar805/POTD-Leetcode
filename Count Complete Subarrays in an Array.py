@@ -1,0 +1,1 @@
+class Solution: countCompleteSubarrays=lambda _, A: ((d := len(set(A))), (f := Counter()), (l := 0), (res := 0), [next(_ for _ in count() if ((res := res + len(A) - r), f.update({A[l]:-1}), (f := +f), (l := l + 1))[-1] >= len(A) or len(f) != d) if f.update([A[r]]) or len(f) == d else 0 for r in range(len(A))], res)[-1]
